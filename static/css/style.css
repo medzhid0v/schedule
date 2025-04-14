@@ -1,0 +1,73 @@
+/* Общие стили */
+body {
+    background-color: #f8f9fa;
+}
+
+/* Стили для таблиц */
+.table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Стили для карточек */
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+
+/* Стили для кнопок */
+.btn {
+    font-weight: 500;
+}
+
+.btn-outline-primary {
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Стили для навигации */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+/* Стили для форм */
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13,110,253,0.25);
+}
+
+/* Стили для расписания */
+.schedule-cell {
+    min-height: 100px;
+    padding: 0.5rem;
+}
+
+.schedule-cell.empty {
+    background-color: #f8f9fa;
+}
+
+.schedule-cell.occupied {
+    background-color: #e9ecef;
+} 
