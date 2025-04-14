@@ -1,0 +1,100 @@
+[
+    {
+        "model": "schedule_app.teacher",
+        "pk": 1,
+        "fields": {
+            "first_name": "Иван",
+            "last_name": "Иванов",
+            "middle_name": "Иванович",
+            "email": "ivanov@university.ru"
+        }
+    },
+    {
+        "model": "schedule_app.teacher",
+        "pk": 2,
+        "fields": {
+            "first_name": "Петр",
+            "last_name": "Петров",
+            "middle_name": "Петрович",
+            "email": "petrov@university.ru"
+        }
+    },
+    {
+        "model": "schedule_app.group",
+        "pk": 1,
+        "fields": {
+            "name": "ИВТ-101",
+            "course": 1,
+            "faculty": "Информатика и вычислительная техника"
+        }
+    },
+    {
+        "model": "schedule_app.group",
+        "pk": 2,
+        "fields": {
+            "name": "ИВТ-102",
+            "course": 1,
+            "faculty": "Информатика и вычислительная техника"
+        }
+    },
+    {
+        "model": "schedule_app.classroom",
+        "pk": 1,
+        "fields": {
+            "number": "101",
+            "capacity": 30,
+            "building": "Главный корпус"
+        }
+    },
+    {
+        "model": "schedule_app.classroom",
+        "pk": 2,
+        "fields": {
+            "number": "201",
+            "capacity": 25,
+            "building": "Главный корпус"
+        }
+    },
+    {
+        "model": "schedule_app.subject",
+        "pk": 1,
+        "fields": {
+            "name": "Программирование",
+            "code": "PRG-101"
+        }
+    },
+    {
+        "model": "schedule_app.subject",
+        "pk": 2,
+        "fields": {
+            "name": "Математика",
+            "code": "MATH-101"
+        }
+    },
+    {
+        "model": "schedule_app.schedule",
+        "pk": 1,
+        "fields": {
+            "day_of_week": "MON",
+            "timeslot": "1",
+            "subject": 1,
+            "teacher": 1,
+            "group": 1,
+            "classroom": 1,
+            "week_type": "1"
+        }
+    },
+    {
+        "model": "schedule_app.schedule",
+        "pk": 2,
+        "fields": {
+            "day_of_week": "MON",
+            "timeslot": "2",
+            "subject": 2,
+            "teacher": 2,
+            "group": 1,
+            "classroom": 2,
+            "week_type": "1"
+        }
+    }
+] 

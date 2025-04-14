@@ -1,0 +1,134 @@
+{% extends 'schedule_app/base.html' %}
+{% load schedule_tags %}
+
+{% block title %}Анализ данных{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h2>Анализ данных</h2>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Загруженность групп -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>Загруженность групп</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Группа</th>
+                                <th>Количество занятий</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for group in group_load %}
+                            <tr>
+                                <td>{{ group.name }}</td>
+                                <td>{{ group.total_classes }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Загруженность преподавателей -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>Загруженность преподавателей</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Преподаватель</th>
+                                <th>Количество занятий</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for teacher in teacher_load %}
+                            <tr>
+                                <td>{{ teacher }}</td>
+                                <td>{{ teacher.total_classes }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Использование аудиторий -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>Использование аудиторий</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Аудитория</th>
+                                <th>Количество занятий</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for classroom in classroom_usage %}
+                            <tr>
+                                <td>{{ classroom }}</td>
+                                <td>{{ classroom.total_classes }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Свободные аудитории -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>Свободные аудитории</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Аудитория</th>
+                                <th>День</th>
+                                <th>Время</th>
+                                <th>Неделя</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for free in free_classrooms %}
+                            <tr>
+                                <td>{{ free.classroom }}</td>
+                                <td>{{ free.day }}</td>
+                                <td>{{ free.time }}</td>
+                                <td>{{ free.week_type }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

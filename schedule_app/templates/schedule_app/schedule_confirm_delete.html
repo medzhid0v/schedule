@@ -1,0 +1,36 @@
+{% extends 'schedule_app/base.html' %}
+
+{% block title %}Удаление занятия{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Подтверждение удаления</h3>
+            </div>
+            <div class="card-body">
+                <p class="lead">
+                    Вы действительно хотите удалить это занятие?
+                </p>
+                <p>
+                    <strong>День:</strong> {{ object.get_day_of_week_display }}<br>
+                    <strong>Время:</strong> {{ object.get_timeslot_display }}<br>
+                    <strong>Предмет:</strong> {{ object.subject }}<br>
+                    <strong>Преподаватель:</strong> {{ object.teacher }}<br>
+                    <strong>Группа:</strong> {{ object.group }}<br>
+                    <strong>Аудитория:</strong> {{ object.classroom }}<br>
+                    <strong>Неделя:</strong> {{ object.get_week_type_display }}
+                </p>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-danger">Удалить</button>
+                        <a href="{% url 'schedule_list' %}" class="btn btn-outline-secondary">Отмена</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
